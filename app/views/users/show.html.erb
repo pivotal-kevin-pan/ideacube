@@ -1,0 +1,15 @@
+<div class="page-header">
+	<h1><%= @user.first_name + " "+ @user.last_name%></h1>
+
+</div>
+<% if signed_in? && current_user.id == @user.id %>
+<p class="add_an_idea_button_parent"><%= link_to "Have an idea?", new_idea_path, class: "btn btn-primary btn-lg", role: "button" %></p>
+<% end %>
+
+<h2>Recent ideas...</h2>
+
+<% @ideas.each_with_index do |idea, i| %>
+<%= render "ideas/idea", idea: idea, id_count: i %>
+<% end %>
+	
+<div class="will_paginate_parent"><%= will_paginate(@ideas) %></div>

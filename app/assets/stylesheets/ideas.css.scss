@@ -1,0 +1,49 @@
+// Place all the styles related to the Ideas controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.thumbnail .caption {
+	text-align: center;
+}
+
+.idea_contents {
+	display: inline-block;
+	width: 80%;
+	text-align: left;
+	color: black;
+
+	border-right: 1px solid #CCCCCC;
+}
+
+.idea_upvotes {
+	display: inline-block;
+	width: 12%;
+	vertical-align: top;
+}
+
+.posted_how_long_ago {
+	color: #999999;
+}
+
+.liked_idea {
+	color: red;
+}
+
+.thumbnail a {
+	text-decoration: none;
+}
+
+.jumbotron .thumbnail {
+	background-color: transparent;
+	border: 0;
+}
+
+
+.jumbotron h1 {
+	text-align: left;
+}
+
+.add_an_idea_button_parent {
+	text-align: center;
+	margin-bottom: 40px;
+}

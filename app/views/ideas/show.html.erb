@@ -1,0 +1,18 @@
+<%= render "largeidea", idea: @idea, id_count: 0%>
+
+<% @comments.each do |comment| %>
+	<div class="row">
+		<%= render "comments/comment", comment: comment %>
+	</div>
+<% end %>
+
+<div class="row">
+	<div class="col-md-8 col-md-offset-2">
+		<%= form_for(Comment.new) do |f| %>
+			<%= f.label :content %>
+			<%= f.text_area :content %>
+			<%= f.submit "Submit", class: "btn btn-large btn-primary" %>
+			<%= f.hidden_field :idea_id, value: @idea.id %>
+		<% end %>
+	</div>
+</div>

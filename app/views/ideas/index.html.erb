@@ -1,0 +1,5 @@
+<% @ideas.each_with_index do |idea, i| %>
+	<%= render "ideas/idea", idea: idea, id_count: i %>
+<% end %>
+
+<div class="will_paginate_parent"><%= will_paginate(@ideas) %></div>

@@ -1,0 +1,6 @@
+<%= form_for(current_user.likes.find_by(idea_id: idea.id), html: { method: :delete }, remote: true) do |f| %>
+	<%= button_tag(type: 'submit', class: "btn btn-default btn-lg") do %>
+	  <span class="glyphicon glyphicon-heart liked_idea"></span>
+	<% end %>
+	<%= hidden_field_tag 'id_count', value=id_count %>
+<% end %>

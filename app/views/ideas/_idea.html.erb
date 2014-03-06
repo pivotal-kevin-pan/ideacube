@@ -1,0 +1,34 @@
+<div class="row idea_item">
+  <div class="idea_column col-md-8 col-md-offset-2">
+    <div class="thumbnail">
+      <div class="caption">
+      	<%= link_to idea_path(idea) do %>
+      	<div class="idea_contents">
+	        <h3><%= idea.title %></h3>
+	        <p><%= idea.description %></p>
+	        <p><span class="glyphicon glyphicon-comment"></span> <%= idea.comments.count%> <span class="posted_how_long_ago">| Posted <%= time_ago_in_words(idea.created_at) %> ago by <%= idea.user.first_name + " " + idea.user.last_name %></span></p>
+		</div>
+		<%end%>
+		<div class="idea_upvotes">
+			<h3 id="count_<%= id_count %>"><%= idea.likes.count %></h3>
+
+			<div class="like-form_container" id="form_<%= id_count %>">
+
+				<% if signed_in? && current_user.liked_ideas.include?(idea) %>
+
+					<%= render "ideas/unlike", idea: idea, id_count: id_count %>
+
+				<% else %>
+
+					<%= render "ideas/like", idea: idea, id_count: id_count %>
+
+				<% end %>
+
+			</div>
+			
+
+		</div>
+      </div>
+    </div>
+  </div>
+</div>

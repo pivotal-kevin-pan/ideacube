@@ -1,0 +1,11 @@
+<div class="idea_column col-sm-8 col-md-8 col-md-offset-2">
+  <div class="thumbnail">
+    <div class="caption">        	
+    	<div class="comment_contents">  
+       <h4><%= User.find(comment.user_id).first_name %></h4>
+       <p><%= comment.content %></p>
+       <p class="posted_how_long_ago">Posted <%= time_ago_in_words(comment.created_at) %></p>
+    </div>
+  </div>
+  </div>
+</div>
