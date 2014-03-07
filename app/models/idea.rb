@@ -1,4 +1,6 @@
 class Idea < ActiveRecord::Base
+	include Modules::SharedScopes
+
 	belongs_to :user
 
 	has_many :likes, dependent: :destroy

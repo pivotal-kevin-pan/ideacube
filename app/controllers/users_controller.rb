@@ -18,7 +18,7 @@ class UsersController < ApplicationController
 
 	def show
 		@user = User.find(params[:id])
-		@ideas = @user.ideas.paginate(page: params[:page], :per_page => 5, order: "created_at DESC")
+		@ideas = @user.ideas.from_most_recent.paginate(page: params[:page], :per_page => 5)
 	end
 
 	private

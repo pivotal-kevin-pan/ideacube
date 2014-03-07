@@ -14,12 +14,12 @@ class IdeasController < ApplicationController
 	end
 
 	def index
-		@ideas = Idea.all.paginate(page: params[:page], :per_page => 5, order: "created_at DESC")
+		@ideas = Idea.all.from_most_recent.paginate(page: params[:page], :per_page => 5)
 	end
 
 	def show
 		@idea = Idea.find(params[:id])
-		@comments = @idea.comments.order("created_at DESC")
+		@comments = @idea.comments.from_most_recent
 		# @comments = @idea.comments.paginate(page: params[:page], :per_page => 5, order: "created_at DESC")
 	end
 

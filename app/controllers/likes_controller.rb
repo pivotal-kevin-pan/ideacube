@@ -10,7 +10,7 @@ class LikesController < ApplicationController
 	      format.js
 	      format.html do
 	      	@user = @idea.user
-			@ideas = @user.ideas.paginate(page: params[:page], :per_page => 10, order: "created_at DESC")
+			@ideas = @user.ideas.from_most_recent.paginate(page: params[:page], :per_page => 5)
 	      	render template: "users/show"
 	      end
 	    end
@@ -27,7 +27,7 @@ class LikesController < ApplicationController
 	      format.js
 	      format.html do
 	      	@user = @idea.user
-			@ideas = @user.ideas.paginate(page: params[:page], :per_page => 10, order: "created_at DESC")
+			@ideas = @user.ideas.from_most_recent.paginate(page: params[:page], :per_page => 5)
 	      	render template: "users/show"
 	      end
 	    end
