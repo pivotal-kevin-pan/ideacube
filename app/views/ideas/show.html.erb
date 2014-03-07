@@ -6,6 +6,8 @@
 	</div>
 <% end %>
 
+<% if signed_in? %>
+
 <div class="row">
 	<div class="col-md-8 col-md-offset-2">
 		<%= form_for(Comment.new) do |f| %>
@@ -16,3 +18,5 @@
 		<% end %>
 	</div>
 </div>
+
+<% end %>

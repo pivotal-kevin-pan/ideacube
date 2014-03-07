@@ -60,4 +60,7 @@ describe 'Test idea page not signed in'  do
 	it 'should disable like button when not signed in' do
 		first('.jumbotron button')[:disabled].should eq "disabled"
 	end
+	it 'should not be able to comment when not signed in' do
+		expect(page).should_not have_selector("form input.btn")
+	end 
 end
